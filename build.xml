@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. --><project basedir="." default="build" name="FavUrlResolver">
+    <property environment="env"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+    <path id="Maven Dependencies.libraryclasspath"/>
+    <path id="libs.userclasspath"/>
+    <path id="FavUrlResolver.classpath">
+        <pathelement location="target/classes"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+        <path refid="libs.userclasspath"/>
+        <pathelement location="libs/commons-beanutils-1.8.0.jar"/>
+        <pathelement location="libs/commons-collections-3.2.1.jar"/>
+        <pathelement location="libs/commons-lang-2.5.jar"/>
+        <pathelement location="libs/commons-logging-1.2.jar"/>
+        <pathelement location="libs/ezmorph-1.0.6.jar"/>
+        <pathelement location="libs/json-lib-2.4-jdk15.jar"/>
+        <pathelement location="libs/jsoup-1.10.2.jar"/>
+    </path>
+    <path id="run.Tester.classpath">
+        <path refid="FavUrlResolver.classpath"/>
+        <path refid="Maven Dependencies.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="target/classes"/>
+        <copy includeemptydirs="false" todir="target/classes">
+            <fileset dir="src">
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+        <delete dir="target/classes"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="target/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="FavUrlResolver.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+    <target description="copy Eclipse compiler jars to ant lib directory" name="init-eclipse-compiler">
+        <copy todir="${ant.library.dir}">
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </copy>
+        <unzip dest="${ant.library.dir}">
+            <patternset includes="jdtCompilerAdapter.jar"/>
+            <fileset dir="${ECLIPSE_HOME}/plugins" includes="org.eclipse.jdt.core_*.jar"/>
+        </unzip>
+    </target>
+    <target description="compile project with Eclipse compiler" name="build-eclipse-compiler">
+        <property name="build.compiler" value="org.eclipse.jdt.core.JDTCompilerAdapter"/>
+        <antcall target="build"/>
+    </target>
+    <target name="Tester">
+        <java classname="main.Tester" failonerror="true" fork="yes">
+            <classpath refid="run.Tester.classpath"/>
+        </java>
+    </target>
+</project>

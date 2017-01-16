@@ -16,12 +16,13 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="/home/jack/下载/libs/commons-beanutils-1.9.3.jar"/>
-	<classpathentry kind="lib" path="/home/jack/下载/libs/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="/home/jack/下载/libs/ezmorph-1.0.6.jar"/>
-	<classpathentry kind="lib" path="/home/jack/下载/libs/json-lib-2.4-jdk15.jar"/>
-	<classpathentry kind="lib" path="/home/jack/下载/libs/jsoup-1.10.2.jar"/>
-	<classpathentry kind="lib" path="/home/jack/下载/commons-lang-2.5/commons-lang-2.5.jar"/>
-	<classpathentry kind="lib" path="/home/jack/下载/commons-collections-3.2.1/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/libs"/>
+	<classpathentry kind="lib" path="/home/jack/workspace/FavUrlResolver/libs/commons-beanutils-1.8.0.jar"/>
+	<classpathentry kind="lib" path="/home/jack/workspace/FavUrlResolver/libs/commons-collections-3.2.1.jar"/>
+	<classpathentry kind="lib" path="/home/jack/workspace/FavUrlResolver/libs/commons-lang-2.5.jar"/>
+	<classpathentry kind="lib" path="/home/jack/workspace/FavUrlResolver/libs/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="/home/jack/workspace/FavUrlResolver/libs/ezmorph-1.0.6.jar"/>
+	<classpathentry kind="lib" path="/home/jack/workspace/FavUrlResolver/libs/json-lib-2.4-jdk15.jar"/>
+	<classpathentry kind="lib" path="/home/jack/workspace/FavUrlResolver/libs/jsoup-1.10.2.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
